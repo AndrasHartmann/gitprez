@@ -139,21 +139,20 @@ LCSB, Computational Biology group
 \section{Git basics}
 
 \begin{frame}{Local vs Centralized VCS}
-\begin{columns}
+\begin{columns}%TODO align columns
 \column{.5\textwidth}
 \centering
 {\LARGE LOCAL}\\[0.2in]
-\includegraphics[scale=0.3]{VCS_local.pdf}\\
+\includegraphics[scale=0.3]{VCS_local.png}\\
+Not shared with anyone\\
 e.g. on your own HDD
 \column{.5\textwidth}
-\begin{center}
+\centering
 {\LARGE CENTRALIZED}\\[0.2in]
-%{\includegraphics [scale=0.3]{VCS_centralized-1.pdf}}
-{\includegraphics [scale=0.3]{VCS_centralized-2.pdf}}
-Everyone sees\\
-\emph{the same}\\
+%{\includegraphics [scale=0.3]{VCS_centralized-1.png}}
+{\includegraphics [scale=0.3]{VCS_centralized-2.png}}\\
+Everybody sees the same version\\
 on the server\\
-\end{center}
 \end{columns}
 \end{frame}
 
@@ -162,7 +161,7 @@ on the server\\
 
 \begin{center}
 \centering
-\includegraphics [scale=0.3]{VCS_distributed.pdf}
+\includegraphics [scale=0.3]{VCS_distributed.png}\\[0.2in]
 Both local AND global, but most operations are local\\
  Everybody has the full history of commits
 \end{center}
@@ -174,12 +173,12 @@ Both local AND global, but most operations are local\\
 \column{.5\textwidth}
 {\includegraphics [scale=0.3]{basic_checkin.png}}
 \pause
-{\includegraphics [scale=0.3]{first_branch.png}}
-\pause
-\column{.5\textwidth}
 {\includegraphics [scale=0.3]{checkout_edit.png}}
 \pause
-{\includegraphics [scale=0.3]{merging.png}}
+\column{.5\textwidth}
+{\includegraphics [scale=0.28]{first_branch.png}}
+\pause
+{\includegraphics [scale=0.28]{merging.png}}
 \pause
 \end{columns}
 \end{frame}
@@ -187,17 +186,20 @@ Both local AND global, but most operations are local\\
 \subsection{Install}
 
 \begin{frame}{Install git}
-\begin{itemize}
-  \setlength\itemsep{0.4in}
-   \item Linux / UNIX
+\begin{block}{Linux / UNIX}
      \begin{itemize}
-       \item [OS X]\$ brew install git %#\;\;\;\;\; #homebrew
-       \item[Ubuntu]\$ aptitude install git
-       \item[Arch]\$ pacman -S git
+       \setlength\itemsep{0.2in}
+       \item {\bf OS X}\\ \$ brew install git %#\;\;\;\;\; #homebrew
+       \item {\bf Ubuntu}\\ \$ aptitude install git
+       \item {\bf Arch}\\ \$ pacman -S git
      \end{itemize}
- \item Windows \\
-\url{https://git-for-windows.github.io/}
-\end{itemize}
+\end{block}
+
+\begin{block}{Windows}
+    \begin{itemize}
+      \item \url{https://git-for-windows.github.io/}
+    \end{itemize}
+\end{block}
 \end{frame}
 
 \subsection{Basic commands}
