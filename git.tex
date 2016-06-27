@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{verbatim}
+\usepackage{hyperref}
 %gets rid of bottom navigation bars
 \setbeamertemplate{footline}{}
 %gets rid of navigation symbols
@@ -39,6 +40,13 @@
 \usepackage{verbatim}
 
 
+\AtBeginSection[]
+{
+  \frame{
+    \frametitle{Summary}
+    {\scriptsize\tableofcontents[currentsection]}
+  }
+}
 
 
 %%%%%%%%%% Header %%%%%%%%%%%%
@@ -70,22 +78,20 @@ LCSB, Computational Biology group
 
 \section{Introduction}
 
-\begin{frame}{Why VCS?}{Version Control Systems}
-Do you remember this?\\
-\centering
-    \includegraphics[height=0.8\textheight]{Finaldoc.png}
-\end{frame}
-
-\begin{frame}{Why VCS?}{Version Control Systems}
-And this?\\
-\centering
-    \includegraphics[height=0.8\textheight]{ctrl-s.png}
-\end{frame}
-
-\begin{frame}{Why VCS?}{Version Control Systems}
+\begin{frame}{Why use Version Control Systems?}
 \begin{itemize}
-  \setlength\itemsep{0.2in}
-\item Storing versioned files on the easy way
+\item Version Control = Revision Control = Source Control
+\item Allows you to track your files over time on a standardized (foolproof) way.
+\item Ever get files like Final\_rev.22.comments49 ... doc?
+\end{itemize}
+\centering
+    \includegraphics[height=0.6\textheight]{Finaldoc.png}
+\end{frame}
+
+\begin{frame}{Why use Version Control Systems?}
+    \begin{columns}
+        \column{0.5\textwidth}
+\begin{itemize}
 \item Collaboration
 	\begin{itemize}
 	\item Sharing files
@@ -93,13 +99,20 @@ And this?\\
 	\item Review changes, trace problems
 	\item Optimal team work-flow
 	\end{itemize}
+\end{itemize}
+        \column{0.5\textwidth}
+\begin{itemize}
 \item Backup \& History
 	\begin{itemize}
-	\item Ultimate ctrl-z
+	\item Ultimate ctrl-z (undo)
 	\item Remote / local storage
-	\item Logs: Forced comments to all revisions
+	\item Logs: comments to all revisions
+	\item No more loosing your files
 	\end{itemize}
 \end{itemize}
+    \end{columns}
+\centering
+    \includegraphics[height=0.6\textheight]{ctrl-s.png}
 \end{frame}
 
 \begin{frame}{What kind of data?}{Version Control Systems}
@@ -118,16 +131,99 @@ And this?\\
 
 \begin{frame}{Why git?}
 \begin{itemize}
-\item{Distributed}
+\item Decentralized
+\item Fast
+\item Flexible
+\end{itemize}
+\end{frame}
+\section{Git basics}
+
+\begin{frame}{Local vs Centralized VCS}
+\begin{columns}
+\column{.5\textwidth}
+\centering
+{\LARGE LOCAL}\\[0.2in]
+\includegraphics[scale=0.3]{VCS_local.pdf}\\
+e.g. on your own HDD
+\column{.5\textwidth}
+\begin{center}
+{\LARGE CENTRALIZED}\\[0.2in]
+%{\includegraphics [scale=0.3]{VCS_centralized-1.pdf}}
+{\includegraphics [scale=0.3]{VCS_centralized-2.pdf}}
+Everyone sees\\
+\emph{the same}\\
+on the server\\
+\end{center}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Distributed VCS}{Git}
+
+\begin{center}
+\centering
+\includegraphics [scale=0.3]{VCS_distributed.pdf}
+Both local AND global, but most operations are local\\
+ Everybody has the full history of commits
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Some Typical VCS Workflows}
+\begin{columns}
+\column{.5\textwidth}
+{\includegraphics [scale=0.3]{basic_checkin.png}}
+\pause
+{\includegraphics [scale=0.3]{first_branch.png}}
+\pause
+\column{.5\textwidth}
+{\includegraphics [scale=0.3]{checkout_edit.png}}
+\pause
+{\includegraphics [scale=0.3]{merging.png}}
+\pause
+\end{columns}
+\end{frame}
+
+\subsection{Install}
+
+\begin{frame}{Install git}
+\begin{itemize}
+  \setlength\itemsep{0.4in}
+   \item Linux / UNIX
+     \begin{itemize}
+       \item [OS X]\$ brew install git %#\;\;\;\;\; #homebrew
+       \item[Ubuntu]\$ aptitude install git
+       \item[Arch]\$ pacman -S git
+     \end{itemize}
+ \item Windows \\
+\url{https://git-for-windows.github.io/}
 \end{itemize}
 \end{frame}
 
-\section{Start using GIT}
+\subsection{Basic commands}
+
+\section{Advanced topics}
+
+\section{GitLab}
+
+\section{Git resources}
 \begin{frame}{Further reading}
 \begin{itemize}
-\item{Distributed}
+  \setlength\itemsep{0.4in}
+\item "Pro Git" Book by ... \\$\rightarrow$  \url{http://git-scm.com/book}
+\item Git reference  \\ $\rightarrow$  \url{http://git-scm.com/docs}
+\item Git cheatsheet  \\ $\rightarrow$ \url{https://www.git-tower.com/blog/git-cheat-sheet}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Learning by doing}
+\begin{itemize}
+  \setlength\itemsep{0.4in}
+\item Tutorials  \\$\rightarrow$  \url{https://www.atlassian.com/git/tutorials}
+\item Learn Git on codecademy - Strongly recommended!\\ $\rightarrow$ \url{https://www.codecademy.com/learn/learn-git}
+\end{itemize}
+\end{frame}
+
 
 
 \end{document}
