@@ -3,43 +3,73 @@
 %
 % =============================================================================
 
-\documentclass{beamer}
-% \documentclass[draft]{beamer}
-%\usepackage{_style}
+\documentclass[10pt,xcolor=dvipsnames]{beamer}
 
-\usetheme[image=logos/logo_ULHPC.pdf]{Madrid}
+\usetheme{Madrid}
 
+%\renewcommand\mathfamilydefault{\rmdefault}
+\usefonttheme[onlymath]{serif}
 
-\graphicspath{{figs/}} % Add this directory to the searched paths for graphics
+%\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{verbatim}
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}{}
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+%\usetheme{Frankfurt}
+%\usetheme{Rochester}
+%\usepackage{beamerthemeshadow}
+
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+
+%\usepackage{floatflt}
+%\usepackage[utf8]{inputenc}
+%\usepackage{multirow}
+    \usepackage{mathptmx}
+\graphicspath{{./pics/}{./figs/}}
+\usepackage{graphicx}          % Include this line if your 
+                               % document contains figures,
+\usepackage[super]{nth}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{verbatim}
+
 
 
 
 %%%%%%%%%% Header %%%%%%%%%%%%
-\title{Introduction to Git}
-\subtitle{}
+\title{Short Introduction to Git}
+\subtitle{Grup Seminar}
 
-\author{Andr\'as Hartmann}
+\author{Andr\'as Hartmann, Sascha Zickenrott}
 \institute[LCSB]{
 LCSB, Computational Biology group
   University of Luxembourg
 }
 % Mandatory to **declare** a logo to be placed on the bottom right -- normally the
 % university logo. ADAPT ACCORDINGLY:
-\pgfdeclareimage[height=0.8cm]{logo}{figs/logo_UL.pdf}
 
-\date{}
+\date[June 29, 2016]{June 29, 2016, Luxembourg}
+
+\logo{\includegraphics[height=0.10\paperheight]{logo_UL.pdf} \hspace{0.2in}\vspace{0.2in}}
 
 %%%%%%%%%%%%% Body %%%%%%%%%%%%%%%
 \begin{document}
 
 \begin{frame}
   \vspace{2.5em}
+\begin{center}
+    \includegraphics[height=0.2\textheight]{git-logo.jpg}
+\end{center}
   \titlepage
 \end{frame}
 
 \section{Introduction}
 
-\section{VCS}
 \begin{frame}{Why VCS?}{Version Control Systems}
 Do you remember this?\\
 \centering
@@ -87,6 +117,13 @@ And this?\\
 
 
 \begin{frame}{Why git?}
+\begin{itemize}
+\item{Distributed}
+\end{itemize}
+\end{frame}
+
+\section{Start using GIT}
+\begin{frame}{Further reading}
 \begin{itemize}
 \item{Distributed}
 \end{itemize}
