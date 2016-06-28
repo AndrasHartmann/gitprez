@@ -186,19 +186,6 @@ Both local AND global, but most operations are local\\
 \end{frame}
 
 
-\begin{frame}{Some Typical VCS Workflows}
-\begin{columns}
-\column{.5\textwidth}
-{\includegraphics [scale=0.3]{basic_checkin.png}}
-\pause
-{\includegraphics [scale=0.3]{checkout_edit.png}}
-\pause
-\column{.5\textwidth}
-{\includegraphics [scale=0.28]{first_branch.png}}
-\pause
-{\includegraphics [scale=0.28]{merging.png}}
-\end{columns}
-\end{frame}
 
 \subsection{Install}
 
@@ -318,7 +305,7 @@ Who was it?
 \end{frame}
 
 
-\begin{frame}{log / blame }
+\begin{frame}{Undo / ctrl-z}
 \begin{block}{}
 \$ git commit –-amend
 \end{block}
@@ -329,7 +316,7 @@ Changes the last commit
 \end{block}
 Unstage staged file
 \begin{block}{}
-\$ git checkout –- $<$file$>$
+\$ git checkout $<$file$>$
 \end{block}
 Restores file to last commit. DANGER: all the changes lost!
 \begin{block}{}
@@ -377,7 +364,7 @@ origin git://github.com/schacon/ticgit.git (push)
 \begin{frame}{Remotes}
 
 \begin{block}{}
-\$ git pull -u $<$remote$>$ $<$rbranch$>$
+\$ git pull $<$remote$>$ $<$rbranch$>$
 \end{block}
 Or simply:\\
 \$ git pull\\
@@ -403,46 +390,62 @@ create a pull request instead
 \subsection{Branches}
 
 \begin{frame}{Branches}
-\begin{center}
-Branches are ``Pointers'' to commits
-\includegraphics[width = 0.7\textwidth]{branch1.png}
-\end{center}
-\end{frame}
-
-\begin{frame}{Diverging Branches}
-\begin{center}
-Branches can diverge during development
-\includegraphics[width = 0.7\textwidth]{branch2.png}
-\end{center}
-\end{frame}
-
-\begin{frame}{Merging Branches}
-\begin{center}
-Branches can be merged
-\includegraphics[width = 0.7\textwidth]{branch2.png}
-\end{center}
 \begin{itemize}
-\item Usually painless
-\item Conflicts have to be resolved (if any)
+\item Branches are ``Pointers'' to commits
+\item Branches can diverge during development
 \end{itemize}
+~\\[0.1in]
+\begin{center}
+\includegraphics[width = 0.6\textwidth]{branch2.png}
+\end{center}
 \end{frame}
 
+\begin{frame}{Branches}
+\begin{center}
+\begin{itemize}
+\item Merge: ``joining branches'': usually painless
+\item Conflicts the same line has changed 
+\begin{itemize}
+\item Have to be resolved (manually / automatically)
+\end{itemize}
+\end{itemize}
+\includegraphics[width = 0.6\textwidth]{branchmerge.png}
+\end{center}
+\end{frame}
 
+\begin{frame}{Some Typical VCS Workflows}
+\begin{columns}
+\column{.5\textwidth}
+{\includegraphics [scale=0.3]{basic_checkin.png}}
+\pause
+{\includegraphics [scale=0.3]{checkout_edit.png}}
+\pause
+\column{.5\textwidth}
+{\includegraphics [scale=0.28]{first_branch.png}}
+\pause
+{\includegraphics [scale=0.28]{merging.png}}
+\end{columns}
+\end{frame}
 
 \section{GitLab}
 \begin{frame}{GitLab}
+\begin{itemize}
+\item GitLab is an online git interface (like github)\\
+\item Available at \url{https://git-r3lab.uni.lu}\\[0.2in]
+\end{itemize}
 \centering
-\url{https://git-r3lab.uni.lu}\\[0.2in]
 \includegraphics[height=0.70\paperheight]{gitlab.png} 
 \end{frame}
 
 \section{Git resources}
 \begin{frame}{Further reading}
 \begin{itemize}
-  \setlength\itemsep{0.4in}
+  \setlength\itemsep{0.2in}
 \item "Pro Git" Book by ... \\$\rightarrow$  \url{http://git-scm.com/book}
 \item Git reference  \\ $\rightarrow$  \url{http://git-scm.com/docs}
 \item Git cheatsheet  \\ $\rightarrow$ \url{https://www.git-tower.com/blog/git-cheat-sheet}
+\item This presentation is on github\\
+\$ git clone \url{https://github.com/AndrasHartmann/gitprez.git}
 \item You can always check:\\
  \$ help git [$<$command$>$]
 \end{itemize}
@@ -450,9 +453,13 @@ Branches can be merged
 
 \begin{frame}{Learning by doing}
 \begin{itemize}
-  \setlength\itemsep{0.4in}
+  \setlength\itemsep{0.2in}
 \item Tutorials  \\$\rightarrow$  \url{https://www.atlassian.com/git/tutorials}
 \item Learn Git on codecademy - Strongly recommended!\\ $\rightarrow$ \url{https://www.codecademy.com/learn/learn-git}
+\item Most important:
+\begin{center}
+\includegraphics[height=0.3\textheight]{fire-git.png}
+\end{center}
 \end{itemize}
 \end{frame}
 
