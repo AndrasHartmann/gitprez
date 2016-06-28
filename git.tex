@@ -175,6 +175,16 @@ Both local AND global, but most operations are local\\
 \end{center}
 \end{frame}
 
+\begin{frame}{Tracking changes}
+\centering
+{\LARGE Most VCS}\\[0.1in]
+\includegraphics [scale=0.3]{tracking_changes_svn.png}\\[0.2in]
+\pause
+{\LARGE Git}\\[0.1in]
+\includegraphics [scale=0.3]{tracking_changes_git.png}\\[0.1in]
+``Git thinks of its data more like a set of snapshots of a mini filesystem.''
+\end{frame}
+
 
 \begin{frame}{Some Typical VCS Workflows}
 \begin{columns}
@@ -211,13 +221,141 @@ Both local AND global, but most operations are local\\
 
 \subsection{Basic commands}
 
-\begin{frame}{}
+\begin{frame}{The three (local) Stages}
+\begin{center}
 \includegraphics[width = 0.7\textwidth]{three_states.pdf}
+\end{center}
+\begin{itemize}
+\item The {\bf local repository} lives in the .git directory.
+\item The {\bf staging area} tracks what will go into the next commit, kind of index
+\end{itemize}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Local vs Remote}
+\begin{center}
 \includegraphics[width = 0.7\textwidth]{diagrams-lifecycle_remote.pdf}
+\end{center}
 \end{frame}
+
+
+\begin{frame}{First steps}
+\begin{block}{}
+\$ git init
+\end{block}
+Initializes a new git repository\\[0.4in]
+
+\begin{block}{}
+\$ git clone [–-recursive] $<$url$>$ [$<$path$>$]
+\end{block}
+Clones a remote repository to access locally\\
+url can be local /git / git+ssh / http(s), etc ...
+\end{frame}
+
+\begin{frame}{Adding new files}
+\begin{block}{}
+\$ git add [-f] [$<$pathspec$>$ ...]
+\end{block}
+Adds new file(s) to the index
+\begin{center}
+\includegraphics[scale=0.3]{diagrams_add_commit-02.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}{Committing changes}
+\begin{block}{}
+\$ git commit [-a] [-m "msg"] [$<$pathspec$>$ ...]
+\end{block}
+Commits the changes\\
+-a: commits all,
+-m: write a message
+\begin{center}
+\includegraphics[scale=0.3]{diagrams_add_commit-03.pdf}
+\end{center}
+\pause
+{\bf IMPORTANT}: Always write a descriptive message to your commit: list all files you changed, and describe wy\\
+In general, try to commit often
+\end{frame}
+
+\begin{frame}{Moving / deleting files}
+\begin{block}{}
+\$ git rm [-rf] [-- cached] [$<$pathspec$>$ ...]
+\end{block}
+--cached : removes from Staging area\\
+default: from index {\bf and} file system\\[0.4in]
+\begin{block}{}
+\$ git mv $<$source$>$ $<$destination$>$
+\end{block}
+Moves source to destination
+\end{frame}
+
+\begin{frame}{Status / diff }
+\begin{block}{}
+\$ git status 
+\end{block}
+Show the working tree status: differences between the index file and current HEAD commit\\[0.4in]
+\begin{block}{}
+\$ git diff [--cached] [$<$ref$>$][$<$pathspec$>$ ...]
+\end{block}
+Check un-staged changes (line by line)\\
+-- cached: check staged changes\\
+Can be relative to a revision, like 1776b2, or HEAD\\[0.4in]
+
+In general it is a good practice to check status and diff {\bf before} commiting
+\end{frame}
+
+\begin{frame}{log / blame }
+\begin{block}{}
+\$ git log [--since="date"] [$<$pathspec$>$ ...]
+\end{block}
+time-filtering: --since=2.weeks or\\
+--since="2 years 1 day 3 minutes ago"\\[0.4in]
+
+\begin{block}{}
+\$ git blame $<$file$>$ 
+\end{block}
+Who was it?
+\end{frame}
+
+
+\begin{frame}{log / blame }
+\begin{block}{}
+\$ git commit –-amend
+\end{block}
+Changes the last commit
+\begin{block}{}
+\$ git unstage $<$file$>$ \\
+\$ git reset HEAD $<$file$>$
+\end{block}
+Unstage staged file
+\begin{block}{}
+\$ git checkout –- $<$file$>$
+\end{block}
+Restores file to last commit. DANGER: all the changes lost!
+\begin{block}{}
+\$ git revert $<$commit$>$
+\end{block}
+Reverts a $<$commit$>$: makes a new commit that undoes \\ {\bf all} the changes made in $<$commit$>$
+\end{frame}
+
+\begin{frame}{.gitignore}
+If present in a folder, tells git to ignore files
+\begin{block}{.gitignore example}
+*.pyc\\
+%*\~\\
+*.swp\\
+/build/\\
+/doc/[abc]*.txt\\
+.pypirc\\
+*.egg-info\\
+\end{block}
+\begin{itemize}
+\item Blank lines or lines starting with \# are ignored (comments)
+\item Standard glob patterns work (wildcards)
+\item End pattern with slash (/) to specify a directory
+\item Negate pattern with exclamation point (!) 
+\end{itemize}
+\end{frame}
+
 
 \section{Advanced topics}
 
