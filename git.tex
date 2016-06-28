@@ -231,11 +231,6 @@ Both local AND global, but most operations are local\\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Local vs Remote}
-\begin{center}
-\includegraphics[width = 0.7\textwidth]{diagrams-lifecycle_remote.pdf}
-\end{center}
-\end{frame}
 
 
 \begin{frame}{First steps}
@@ -355,7 +350,46 @@ If present in a folder, tells git to ignore files
 \item Negate pattern with exclamation point (!) 
 \end{itemize}
 \end{frame}
+\subsection{Working with remote(s)}
 
+\begin{frame}{Remotes}
+\begin{itemize}
+\item Other clones of the same repository
+\item Can be local (another checkout) or remote (coworker, central server)
+\item There are default remotes for push and pull 
+\end{itemize}
+\begin{block}{}
+\$ git remote -v \\
+origin git://github.com/schacon/ticgit.git (fetch) \\
+origin git://github.com/schacon/ticgit.git (push)
+\end{block}
+\end{frame}
+
+\begin{frame}{Remotes}
+
+\begin{block}{}
+\$ git pull -u $<$remote$>$ $<$rbranch$>$
+\end{block}
+Or simply:\\
+\$ git pull\\
+Pulls the commits from the remote\\[0.2in]
+
+\begin{block}{}
+\$ git push -u $<$remote$>$ $<$rbranch$>$
+\end{block}
+Using defaults:\\
+\$ git push -u origin master\\
+Pushes all the commits into the remote\\[0.2in]
+{\bf IMPORTANT}: do not simply push to someone else's repository\\
+create a pull request instead
+\end{frame}
+
+
+\begin{frame}{Local vs Remote}
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{diagrams-lifecycle_remote.pdf}
+\end{center}
+\end{frame}
 
 \section{Advanced topics}
 
