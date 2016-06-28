@@ -51,7 +51,7 @@
 
 %%%%%%%%%% Header %%%%%%%%%%%%
 \title{Short Introduction to Git}
-\subtitle{Grup Seminar}
+\subtitle{Group Seminar}
 
 \author{Andr\'as Hartmann, Sascha Zickenrott}
 \institute[LCSB]{
@@ -219,7 +219,7 @@ Both local AND global, but most operations are local\\
 \end{block}
 \end{frame}
 
-\subsection{Basic commands}
+\subsection{Commands}
 
 \begin{frame}{The three (local) Stages}
 \begin{center}
@@ -267,8 +267,14 @@ Commits the changes\\
 \includegraphics[scale=0.3]{diagrams_add_commit-03.pdf}
 \end{center}
 \pause
-{\bf IMPORTANT}: Always write a descriptive message to your commit: list all files you changed, and describe wy\\
-In general, try to commit often
+{\bf IMPORTANT}:
+\begin{itemize}
+\item Always write a descriptive message to your commit!
+\item In the commit description list all files you changed, and describe why
+\item In general, try to commit often, commits are save points
+\item Do not commit code that does not run
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Moving / deleting files}
@@ -353,6 +359,9 @@ If present in a folder, tells git to ignore files
 \subsection{Working with remote(s)}
 
 \begin{frame}{Remotes}
+\begin{center}
+\includegraphics [scale=0.2]{VCS_distributed.png}\\[0.2in]
+\end{center}
 \begin{itemize}
 \item Other clones of the same repository
 \item Can be local (another checkout) or remote (coworker, central server)
@@ -391,9 +400,41 @@ create a pull request instead
 \end{center}
 \end{frame}
 
-\section{Advanced topics}
+\subsection{Branches}
+
+\begin{frame}{Branches}
+\begin{center}
+Branches are ``Pointers'' to commits
+\includegraphics[width = 0.7\textwidth]{branch1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Diverging Branches}
+\begin{center}
+Branches can diverge during development
+\includegraphics[width = 0.7\textwidth]{branch2.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Merging Branches}
+\begin{center}
+Branches can be merged
+\includegraphics[width = 0.7\textwidth]{branch2.png}
+\end{center}
+\begin{itemize}
+\item Usually painless
+\item Conflicts have to be resolved (if any)
+\end{itemize}
+\end{frame}
+
+
 
 \section{GitLab}
+\begin{frame}{GitLab}
+\centering
+\url{https://git-r3lab.uni.lu}\\[0.2in]
+\includegraphics[height=0.70\paperheight]{gitlab.png} 
+\end{frame}
 
 \section{Git resources}
 \begin{frame}{Further reading}
@@ -402,6 +443,8 @@ create a pull request instead
 \item "Pro Git" Book by ... \\$\rightarrow$  \url{http://git-scm.com/book}
 \item Git reference  \\ $\rightarrow$  \url{http://git-scm.com/docs}
 \item Git cheatsheet  \\ $\rightarrow$ \url{https://www.git-tower.com/blog/git-cheat-sheet}
+\item You can always check:\\
+ \$ help git [$<$command$>$]
 \end{itemize}
 \end{frame}
 
@@ -413,7 +456,4 @@ create a pull request instead
 \end{itemize}
 \end{frame}
 
-
-
 \end{document}
-
